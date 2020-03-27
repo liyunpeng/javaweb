@@ -116,6 +116,15 @@
         <url-pattern>/TomcatTest/UploadServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SendEmail</servlet-name>
+        <servlet-class>com.runoob.test.SendEmail</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendEmail</servlet-name>
+        <url-pattern>/SendEmail</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>ErrorHandler</servlet-name>
@@ -133,7 +142,5 @@
         <exception-type>java.lang.Throwable</exception-type >
         <location>/ErrorHandler</location>
     </error-page>
-
-
 
 </web-app>

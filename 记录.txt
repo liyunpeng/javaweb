@@ -75,4 +75,11 @@ http://localhost:8080/a/upload.jsp 页面中文乱码
 upload.jsp 编码由gkb, 改为utf-8
 
 ----------------------
+编译所有的java文件
+H:\ligang\My Documents\Downloads\apache-tomcat-7.0.59\webapps\javaweb\WEB-INF>javac -d classes *.java
+在classes目录下生成所有的.class文件
+
+-------------------
+http://localhost:8080/javaweb/
+初次不显示， 检查class有没有编译出， 重启tomcat,
 
