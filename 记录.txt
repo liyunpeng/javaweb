@@ -1,0 +1,78 @@
+
+--------------------
+软件包javax.servlet不存在的解决办法：
+
+从tomcat lib目录下拷贝一个servlet-api.jar的包到“JDK\jre\lib\ext”目录下
+凡是出现找不到包的情况，都可以将找到的包放到JDK\jre\lib\ext下，
+
+-----------------------
+命令行乱码：
+chcp 65001
+chcp 936
+
+
+javac -d classes Refresh.java
+
+会自动在当前目录下的classes创建 Refresh.java里指定的目录。
+
+
+---------------------
+遇到页面爆粗404， 但message为空时， 需要重启tomcat
+HTTP Status 404 -
+type Status report
+
+message
+
+description The requested resource is not available.
+
+---------------------------
+
+http://localhost:8080/a/TomcatTest/DisplayHeader
+
+过滤器：
+http://localhost:8080/a/form.jsp?name=dd&url=fff
+命令行都有输出。
+站点网址：http://www.runoob.com
+
+
+------------------------------
+
+创建测试数据
+接下来我们在 MySQL 中创建 RUNOOB 数据库，并创建 websites 数据表，表结构如下：
+
+CREATE TABLE `websites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(20) NOT NULL DEFAULT '' COMMENT '站点名称',
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `alexa` int(11) NOT NULL DEFAULT '0' COMMENT 'Alexa 排名',
+  `country` char(10) NOT NULL DEFAULT '' COMMENT '国家',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+插入一些数据：
+
+INSERT INTO `websites` VALUES ('1', 'Google', 'https://www.google.cm/', '1', 'USA'), ('2', '淘宝', 'https://www.taobao.com/', '13', 'CN'), ('3', '菜鸟教程', 'http://www.runoob.com', '5892', ''), ('4', '微博', 'http://weibo.com/', '20', 'CN'), ('5', 'Facebook', 'https://www.facebook.com/', '3', 'USA');
+
+
+---------------
+，当执行 Class.forName("com.mysql.jdbc.Driver");时 不会去查找驱动的。
+所以本实例中我们需要把。
+解决办法：
+mysql-connector-java-5.1.39-bin.jar  拷贝到：
+C:\Program Files (x86)\Java\jdk1.7.0_01\jre\lib\ext 目录下。
+ 如果mysql-connector-java-5.1.39-bin.jar 拷贝到 tomcat 下 lib 目录， 实验正明不行
+---------------------
+
+javac -d classes UploadServlet.java
+UploadServlet.java:14: 错误: 程序包org.apache.commons.fileupload不存在
+import org.apache.commons.fileupload.FileItem;
+解决：
+把commons-io-2.5.jar， commons-fileupload-1.3.2.jar两个jar包拷贝到如下目录：
+C:\Program Files (x86)\Java\jdk1.7.0_01\jre\lib\ext
+
+
+-------------------------
+http://localhost:8080/a/upload.jsp 页面中文乱码
+upload.jsp 编码由gkb, 改为utf-8
+
+----------------------
+
